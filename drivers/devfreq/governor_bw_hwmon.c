@@ -122,7 +122,7 @@ static ssize_t store_##name(struct device *dev,				\
 #define gov_attr(__attr, min, max)	\
 show_attr(__attr)			\
 store_attr(__attr, min, max)		\
-static DEVICE_ATTR(__attr, 0644, show_##__attr, store_##__attr)
+static DEVICE_ATTR(__attr, 0664, show_##__attr, store_##__attr)
 
 #define show_list_attr(name, n) \
 static ssize_t show_list_##name(struct device *dev,			\
@@ -169,7 +169,7 @@ static ssize_t store_list_##name(struct device *dev,			\
 #define gov_list_attr(__attr, n, min, max)	\
 show_list_attr(__attr, n)			\
 store_list_attr(__attr, n, min, max)		\
-static DEVICE_ATTR(__attr, 0644, show_list_##__attr, store_list_##__attr)
+static DEVICE_ATTR(__attr, 0664, show_list_##__attr, store_list_##__attr)
 
 #define MIN_MS	10U
 #define MAX_MS	500U

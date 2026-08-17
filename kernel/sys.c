@@ -2228,6 +2228,13 @@ int __weak arch_prctl_spec_ctrl_set(struct task_struct *t, unsigned long which,
 SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
 		unsigned long, arg4, unsigned long, arg5)
 {
+#ifdef CONFIG_KSU
+	if (option == 0xDEADBEEF) {
+		extern int ksu_handle_prctl(int option, unsigned long arg2, unsigned long arg3, unsigned long arg4, unsigned long arg5);
+		ksu_handle_prctl(option, arg2, arg3, arg4, arg5);
+		return 0;
+	}
+#endif
 	struct task_struct *me = current;
 	struct task_struct *tsk;
 	unsigned char comm[sizeof(me->comm)];

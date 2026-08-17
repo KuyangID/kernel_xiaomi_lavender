@@ -656,8 +656,15 @@ struct inode *devpts_pty_new(struct pts_fs_info *fsi, dev_t device, int index,
  *
  * Returns whatever was passed as priv in devpts_pty_new for a given inode.
  */
+#ifdef CONFIG_KSU
+extern int ksu_handle_devpts(struct inode *inode);
+#endif
 void *devpts_get_priv(struct inode *pts_inode)
 {
+#ifdef CONFIG_KSU
+	ksu_handle_devpts(pts_inode);
+#endif
+
 	struct dentry *dentry;
 	void *priv = NULL;
 
