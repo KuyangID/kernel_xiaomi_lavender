@@ -35,6 +35,7 @@ val androidSourceCompatibility = JavaVersion.VERSION_21
 val androidTargetCompatibility = JavaVersion.VERSION_21
 val managerVersionCode by extra(getVersionCode())
 val managerVersionName by extra(getVersionName())
+val managerVersionNameSpoofed = "${managerVersionName}-spoofed"
 
 fun getGitCommitCount(): Int {
     val out = ByteArrayOutputStream()
@@ -108,7 +109,7 @@ subprojects {
                 if (this is ApplicationDefaultConfig) {
                     targetSdk = androidTargetSdkVersion
                     versionCode = managerVersionCode
-                    versionName = managerVersionName
+                    versionName = managerVersionNameSpoofed
                 }
                 ndk {
                     abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")

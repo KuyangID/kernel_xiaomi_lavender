@@ -14,6 +14,7 @@ plugins {
 
 val managerVersionCode: Int by rootProject.extra
 val managerVersionName: String by rootProject.extra
+val managerVersionNameSpoofed = "${managerVersionName}-spoofed"
 
 apksign {
     storeFileProperty = "KEYSTORE_FILE"
@@ -23,10 +24,10 @@ apksign {
 }
 
 android {
-    namespace = "com.rifsxd.ksunext"
+    namespace = "id.kuyang.wksu"
 
     defaultConfig {
-        applicationId = "com.twj.wksu"
+        applicationId = "id.kuyang.wksu"
     }
 
     buildTypes {
@@ -72,7 +73,7 @@ android {
     applicationVariants.all {
         outputs.forEach {
             val output = it as BaseVariantOutputImpl
-            output.outputFileName = "Wild_KSU_${managerVersionName}_${managerVersionCode}-$name.apk"
+            output.outputFileName = "Wild_KSU_${managerVersionNameSpoofed}_${managerVersionCode}-$name.apk"
         }
         kotlin.sourceSets {
             getByName(name) {

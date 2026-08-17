@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
 
     <application
-        android:name="com.rifsxd.ksunext.KernelSUApplication"
+        android:name="id.kuyang.wksu.KernelSUApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:enableOnBackInvokedCallback="true"
@@ -18,7 +18,7 @@
         android:theme="@style/Theme.KernelSU"
         tools:targetApi="34">
         <activity
-            android:name="com.rifsxd.ksunext.ui.MainActivity"
+            android:name="id.kuyang.wksu.ui.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.KernelSU">
             <intent-filter>
@@ -37,14 +37,14 @@
         </activity>
 
         <activity
-            android:name="com.rifsxd.ksunext.ui.webui.WebUIActivity"
+            android:name="id.kuyang.wksu.ui.webui.WebUIActivity"
             android:autoRemoveFromRecents="true"
             android:documentLaunchMode="intoExisting"
             android:exported="false"
             android:theme="@style/Theme.KernelSU.WebUI" />
 
         <activity
-            android:name="com.rifsxd.ksunext.ui.webui.WebUIXActivity"
+            android:name="id.kuyang.wksu.ui.webui.WebUIXActivity"
             android:autoRemoveFromRecents="true"
             android:documentLaunchMode="intoExisting"
             android:exported="false"

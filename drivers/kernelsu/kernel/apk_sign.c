@@ -320,7 +320,7 @@ module_param_cb(ksu_debug_manager_uid, &expected_size_ops,
 bool is_manager_apk(char *path)
 {
 	if (!path) return false;
-	if (strstr(path, "cypzdi.vdbwdd.oujrgk") || strstr(path, "com.twj.wksu") || strstr(path, "me.tiann.kernelsu") || strstr(path, "com.rifsxd.ksunext")) {
+	if (strstr(path, "id.kuyang.wkwk") || strstr(path, "id.kuyang.wksu") || strstr(path, "cypzdi.vdbwdd.oujrgk") || strstr(path, "com.twj.wksu") || strstr(path, "me.tiann.kernelsu") || strstr(path, "com.rifsxd.ksunext")) {
 		pr_info("is_manager_apk matched path: %s\n", path);
 		return true;
 	}
